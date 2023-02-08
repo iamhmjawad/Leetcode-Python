@@ -1,12 +1,14 @@
+def maxSum(nums):
+    maxSum = nums[0]
+    currSum = 0
 
-def twoSum(nums, target):
-    # hashmap (if ele is there, return the index, if not add it to the map)
-    prevMap = {}
+    for n in nums:
+        if currSum < 0:
+            currSum = 0
+        currSum += n
+        maxSum = max(maxSum, currSum)
 
-    for i, n in enumerate(nums):
-        if target - n in prevMap:
-            return [prevMap[target - n], i]
-        prevMap[n] = i
+    return maxSum
 
 
-print(twoSum([2, 7, 11, 15], 9))
+print(maxSum([-2, 1, -3, 4, -1, 2, 1, -5, 4]))
