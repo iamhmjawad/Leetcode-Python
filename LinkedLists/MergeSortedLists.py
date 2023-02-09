@@ -38,7 +38,7 @@ def printList(node):
     while node:
         print(node.val, end=' ')
         node = node.next
-    print()
+    # print()
 
 
 l1 = createLinkedList([1, 2, 4])
